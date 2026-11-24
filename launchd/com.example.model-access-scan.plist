@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+  "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.example.model-access-scan</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/usr/bin/python3</string>
+    <!-- EDIT: absolute path to where you put the script -->
+    <string>/Users/YOURNAME/model-access-scan.py</string>
+  </array>
+  <!-- The 1st and 15th of each month, 7:30 AM: the door-sweep census. -->
+  <key>StartCalendarInterval</key>
+  <array>
+    <dict><key>Day</key><integer>1</integer>
+          <key>Hour</key><integer>7</integer><key>Minute</key><integer>30</integer></dict>
+    <dict><key>Day</key><integer>15</integer>
+          <key>Hour</key><integer>7</integer><key>Minute</key><integer>30</integer></dict>
+  </array>
+  <key>StandardOutPath</key>
+  <string>/tmp/model-access-scan.log</string>
+  <key>StandardErrorPath</key>
+  <string>/tmp/model-access-scan.log</string>
+</dict>
+</plist>

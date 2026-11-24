@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+  "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.example.model-keepwarm</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/usr/bin/python3</string>
+    <!-- EDIT: absolute path to where you put the script -->
+    <string>/Users/YOURNAME/model-keepwarm.py</string>
+  </array>
+  <!-- Mondays and Thursdays at 7:00 AM: twice-weekly margin against the
+       inactivity gate. launchd runs a missed job on wake from sleep; a
+       fully powered-off machine skips that run. -->
+  <key>StartCalendarInterval</key>
+  <array>
+    <dict><key>Weekday</key><integer>1</integer>
+          <key>Hour</key><integer>7</integer><key>Minute</key><integer>0</integer></dict>
+    <dict><key>Weekday</key><integer>4</integer>
+          <key>Hour</key><integer>7</integer><key>Minute</key><integer>0</integer></dict>
+  </array>
+  <key>StandardOutPath</key>
+  <string>/tmp/model-keepwarm.log</string>
+  <key>StandardErrorPath</key>
+  <string>/tmp/model-keepwarm.log</string>
+</dict>
+</plist>
